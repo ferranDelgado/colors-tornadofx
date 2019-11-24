@@ -18,7 +18,6 @@ private val dataSource: HikariDataSource by lazy {
     hikariConfig.jdbcUrl = url
     hikariConfig.connectionTestQuery = "SELECT 1";
     hikariConfig.maxLifetime = 60000; // 60 Sec
-    hikariConfig.idleTimeout = 45000; // 45 Sec
     hikariConfig.maximumPoolSize = 5; // 5 Connections (including idle connections)
     HikariDataSource(hikariConfig)
 }
