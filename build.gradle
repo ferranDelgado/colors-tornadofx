@@ -40,6 +40,9 @@ repositories {
     mavenCentral()
 }
 
+targetCompatibility = "11"
+sourceCompatibility = "11"
+
 javafx {
     version = "11"
     modules = ["javafx.controls", "javafx.graphics", "javafx.fxml"]
@@ -55,7 +58,7 @@ jlink {
 // Declare the main class for the application plugin
 mainClassName = "com.my.color.view.ColorsApp"
 
-// Set the jvmTarget to 1.8 to support inlining
+//// Set the jvmTarget to 1.8 to support inlining
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
         jvmTarget = "1.8"
