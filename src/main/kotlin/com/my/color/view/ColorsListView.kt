@@ -10,6 +10,10 @@ class ColorsListView : View() {
 
     private val colorController: ColorController by inject()
 
+    init {
+       colorController.load()
+    }
+
     override val root = tableview (colorController.colors) {
         vgrow = Priority.ALWAYS
         column("ID", Color::id)
