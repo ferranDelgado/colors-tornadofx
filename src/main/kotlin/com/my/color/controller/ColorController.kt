@@ -11,4 +11,15 @@ class ColorController : Controller() {
         colors.clear()
         colors.addAll(ColorRepository.findAll())
     }
+
+    fun insert(colorName: String, hex: String): Color {
+        val color = ColorRepository.insert(colorName, hex)
+        colors.add(color)
+        return color
+    }
+
+    fun update(color: Color): Color {
+        return ColorRepository.update(color)
+    }
+
 }

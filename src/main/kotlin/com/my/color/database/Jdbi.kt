@@ -19,6 +19,7 @@ private val dataSource: HikariDataSource by lazy {
     hikariConfig.connectionTestQuery = "SELECT 1";
     hikariConfig.maxLifetime = 60000; // 60 Sec
     hikariConfig.maximumPoolSize = 5; // 5 Connections (including idle connections)
+    hikariConfig.isAutoCommit = true
     HikariDataSource(hikariConfig)
 }
 
